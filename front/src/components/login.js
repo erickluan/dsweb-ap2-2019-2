@@ -37,7 +37,7 @@ class Login extends Component {
                 password: password,
             };
 
-            axios.post('http://localhost:3334/loginUser', user)
+            axios.post('http://localhost:4000/loginUser', user)
                 .then(res => {
                     console.log(res.data);
                     if (

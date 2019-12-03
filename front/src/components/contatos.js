@@ -41,7 +41,7 @@ class Contatos extends Component {
       });
     } else {
       try {
-        axios.get('http://localhost:3334/contatos',{
+        axios.get('http://localhost:4000/contatos',{
           headers: { Authorization: `JWT ${accessString}` },
         })
           .then(res => this.atualizaDados(res.data))

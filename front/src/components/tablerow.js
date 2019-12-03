@@ -15,7 +15,7 @@ class TableRow extends Component {
       this.props.geraErro(true);
     } else {
       try {
-        axios.delete('http://localhost:3334/contatos/' + this.props.obj._id, {
+        axios.delete('http://localhost:4000/contatos/' + this.props.obj._id, {
           headers: { Authorization: `JWT ${accessString}` },
         })
           .then(res => this.props.atualizaDados(res.data))

@@ -37,7 +37,7 @@ class Registrar extends Component {
                 password: password,
             };
 
-            axios.post('http://localhost:3334/registerUser', user)
+            axios.post('http://localhost:4000/registerUser', user)
                 .then(res => {
                     console.log(res.data);
                     if (
