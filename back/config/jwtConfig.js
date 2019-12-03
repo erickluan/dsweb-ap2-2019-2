@@ -1,3 +1,3 @@
 module.exports = {
-    secret: 'ufc-quixada-ap2-jwt-secret',
+    secret: 'chave-dsweb-ap2-2a-chamada',
 };
