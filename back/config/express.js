@@ -12,7 +12,7 @@ module.exports = function() {
 	
 	// configurações
 	app.use(cors());
-	app.set('port', 4000);
+	app.set('port', 4001);
 
 	// middleware
 	app.use(bodyParser.urlencoded({extended: true}));

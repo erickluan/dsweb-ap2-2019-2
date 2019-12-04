@@ -26,7 +26,7 @@ class Edit extends Component {
       });
     } else {
       try {
-        axios.get('http://localhost:4000/contatos/' + this.props.match.params.id, {
+        axios.get('http://localhost:4001/contatos/' + this.props.match.params.id, {
           headers: { Authorization: `JWT ${accessString}` },
         })
           .then(response => {
@@ -73,7 +73,7 @@ class Edit extends Component {
       });
     } else {
       try {
-        axios.put('http://localhost:4000/contatos/' + this.props.match.params.id, obj, {
+        axios.put('http://localhost:4001/contatos/' + this.props.match.params.id, obj, {
           headers: { Authorization: `JWT ${accessString}` },
         })
           .then(res => {

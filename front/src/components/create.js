@@ -56,7 +56,7 @@ class Create extends Component {
       });
     } else {
       try {
-        axios.post('http://localhost:4000/contatos', obj, {
+        axios.post('http://localhost:4001/contatos', obj, {
           headers: { Authorization: `JWT ${accessString}` },
         })
           .then(res => {

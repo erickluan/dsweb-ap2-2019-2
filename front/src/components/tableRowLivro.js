@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-class TableRow extends Component {
+class TableRowLivro extends Component {
 
   constructor(props) {
     super(props);
-    this.delete = this.delete.bind(this);
+    this.deleteLivro = this.deleteLivro.bind(this);
   }
-  async delete() {
+  async deleteLivro() {
     const accessString = localStorage.getItem('JWT');
     if (accessString === null) {
       console.log("nulo");
       this.props.geraErro(true);
     } else {
       try {
-        axios.delete('http://localhost:4001/contatos/' + this.props.obj._id, {
+        axios.delete('http://localhost:4001/livros/' + this.props.obj._id, {
           headers: { Authorization: `JWT ${accessString}` },
         })
           .then(res => this.props.atualizaDados(res.data))
@@ -31,20 +30,23 @@ class TableRow extends Component {
     return (
       <tr>
         <td>
-          {this.props.obj.nome}
+          {this.props.obj.titulo}
         </td>
         <td>
-          {this.props.obj.email}
+          {this.props.obj.autor}
         </td>
         <td>
-          <Link to={"/contatos/edit/" + this.props.obj._id} className="btn btn-primary">Editar</Link>
+          {this.props.obj.anoPublicacao}
         </td>
         <td>
-          <button onClick={this.delete} className="btn btn-danger">Deletar</button>
+          {this.props.obj.isbn}
+        </td>
+        <td>
+          <button onClick={this.deleteLivro} className="btn btn-danger">Deletar</button>
         </td>
       </tr>
     );
   }
 }
 
-export default TableRow;
+export default TableRowLivro;
